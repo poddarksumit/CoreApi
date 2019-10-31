@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 using System.Threading;
@@ -66,15 +67,17 @@ namespace ZipTest.Features.Accounts
         {
             private readonly ApplicationContext dbContext;
             private readonly IMediator mediator;
+            private readonly IConfiguration configuration;
 
             /// <summary>
             /// Initializes a new instance of the <see cref="CommandHandler"/> class.
             /// </summary>
             /// <param name="dbContext">The db context.</param>
-            public CommandHandler(ApplicationContext applicationContext, IMediator mediator)
+            public CommandHandler(ApplicationContext applicationContext, IMediator mediator, IConfiguration configuration)
             {
                 dbContext = applicationContext;
                 this.mediator = mediator;
+                this.configuration = configuration;
             }
 
             /// <inheritdoc/>
@@ -85,13 +88,13 @@ namespace ZipTest.Features.Accounts
 
                 if (userDetails == null)
                 {
-                    // throw error user not found
+                    throw new Exception("The specified email address is not found");
                 }
 
 
-                if (userDetails.MonthlySalary - userDetails.MonthlyExpenses <= 1000)
+                if (userDetails.MonthlySalary - userDetails.MonthlyExpenses <= double.Parse(configuration["creditLimit"]))
                 {
-                    // throw error funds criteria not matched
+                    throw new Exception("Credit limit criteria is not met.");
                 }
 
 

@@ -7384,11 +7384,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\development\\repo\\ZipTest\\ZipTest.Tests\\ZipTest.Tests.csproj",
+      "projectUniqueName": "C:\\development\\repo\\ZipTest\\tests\\ZipTest.Tests\\ZipTest.Tests.csproj",
       "projectName": "ZipTest.Tests",
-      "projectPath": "C:\\development\\repo\\ZipTest\\ZipTest.Tests\\ZipTest.Tests.csproj",
+      "projectPath": "C:\\development\\repo\\ZipTest\\tests\\ZipTest.Tests\\ZipTest.Tests.csproj",
       "packagesPath": "C:\\Users\\SumitPoddar\\.nuget\\packages\\",
-      "outputPath": "C:\\development\\repo\\ZipTest\\ZipTest.Tests\\obj\\",
+      "outputPath": "C:\\development\\repo\\ZipTest\\tests\\ZipTest.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
