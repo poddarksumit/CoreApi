@@ -1,0 +1,16 @@
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\appsettings.json
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\ZipTest.deps.json
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\ZipTest.runtimeconfig.json
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\ZipTest.runtimeconfig.dev.json
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\ZipTest.dll
+C:\development\repo\ZipTest\src\ZipTest\bin\Debug\netcoreapp2.2\ZipTest.pdb
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.RazorAssemblyInfo.cache
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.RazorAssemblyInfo.cs
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.AssemblyInfoInputs.cache
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.AssemblyInfo.cs
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.RazorTargetAssemblyInfo.cache
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.dll
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.pdb
+C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.csprojAssemblyReference.cache
