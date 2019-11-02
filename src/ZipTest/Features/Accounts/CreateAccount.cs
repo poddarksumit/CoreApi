@@ -63,7 +63,7 @@ namespace ZipTest.Features.Accounts
                     
                     if (userDetails == null)
                     {
-                        context.AddFailure("Account has already been created with this email address.");
+                        context.AddFailure("User with the corresponsing email address does not exists.");
                     }
                     else if (userDetails.MonthlySalary - userDetails.MonthlyExpenses <= double.Parse(configuration["creditLimit"]))
                     {

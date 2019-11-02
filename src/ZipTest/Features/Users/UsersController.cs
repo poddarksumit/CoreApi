@@ -50,7 +50,7 @@ namespace ZipTest.Features.Users
             Models.Response.User response = await mediator.Send(query);
             if (response == null)
             {
-                return NotFound("Specified user email address not found.");
+                return NotFound(new { error = "Specified user email address not found." });
             }
             return Ok(response);
         }
