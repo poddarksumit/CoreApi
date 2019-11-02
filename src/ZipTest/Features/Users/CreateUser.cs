@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,7 +12,7 @@ namespace ZipTest.Features.Users
     /// <summary>
     /// Handler to add new user
     /// </summary>
-    public static class CreateAccount
+    public static class CreateUser
     {
         /// <summary>
         /// The command to add user.
@@ -39,10 +38,9 @@ namespace ZipTest.Features.Users
             /// Initializes a new instance of the <see cref="CommandValidator"/> class.
             /// </summary>
             /// <param name="mediator">The command mediator.</param>
-            public CommandValidator(IMediator mediator, ApplicationContext applicationContext)
+            public CommandValidator(IMediator mediator)
             {
                 this.mediator = mediator;
-                this.dbContext = applicationContext;
 
                 // Validate Name
                 RuleFor(m => m.Name).NotEmpty().WithErrorCode("ERR-U-1005").WithMessage("Please enter user's name.");

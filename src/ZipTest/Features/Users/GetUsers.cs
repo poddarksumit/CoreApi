@@ -67,7 +67,7 @@ namespace ZipTest.Features.Users
             /// <inheritdoc/>
             public async Task<UserCollection> Handle(Query query, CancellationToken cancellationToken)
             {
-                IQueryable<UserBase> users = dbContext.Users.AsNoTracking().Select(
+                IQueryable<UserBase> users = dbContext.Users.AsNoTracking().OrderBy(x => x.UserId).Select(
                         x => new UserBase()
                         {
                             Id = x.UserId,

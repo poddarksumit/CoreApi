@@ -34,16 +34,12 @@ namespace ZipTest.Features.Accounts
         /// </summary>
         public class CommandValidator : AbstractValidator<CreateAccountRequest>
         {
-            private readonly ApplicationContext dbContext;
-
             /// <summary>
             /// Initializes a new instance of the <see cref="CommandValidator"/> class.
             /// </summary>
             /// <param name="mediator">The command mediator.</param>
-            public CommandValidator(ApplicationContext applicationContext)
+            public CommandValidator(ApplicationContext applicationContext, IMediator mediator, IConfiguration configuration)
             {
-                dbContext = applicationContext;
-
                 // Validate EmailAddress
                 RuleFor(m => m.EmailAddress).NotNull().WithErrorCode("ERR-A-1007").WithMessage("Please enter user's email address.");
                 RuleFor(m => m.EmailAddress).NotEmpty().WithErrorCode("ERR-A-1007").WithMessage("Please enter user's email address.");
@@ -52,9 +48,26 @@ namespace ZipTest.Features.Accounts
                 // Check if account is already existing.
                 RuleFor(m => m.EmailAddress).Custom((email, context) =>
                 {
-                    if (dbContext.Accounts.Include(x => x.User).Any(x => string.Equals(x.User.Email, email, StringComparison.OrdinalIgnoreCase)))
+                    var user = applicationContext.Accounts.Include(x => x.User).FirstOrDefault(x => x.User.Email == email);
+                    if (user != null)
                     {
                         context.AddFailure("Account has already been created with this email address.");
+                    }
+                });
+
+                // Check if user exists and credit check passed.
+                RuleFor(m => m.EmailAddress).Custom((email, context) =>
+                {
+                    var query = new GetUser.Query() { EmailAddress = email };
+                    User userDetails = mediator.Send(query).Result;
+                    
+                    if (userDetails == null)
+                    {
+                        context.AddFailure("Account has already been created with this email address.");
+                    }
+                    else if (userDetails.MonthlySalary - userDetails.MonthlyExpenses <= double.Parse(configuration["creditLimit"]))
+                    {
+                        context.AddFailure("Credit limit criteria is not met.");
                     }
                 });
             }
@@ -67,17 +80,15 @@ namespace ZipTest.Features.Accounts
         {
             private readonly ApplicationContext dbContext;
             private readonly IMediator mediator;
-            private readonly IConfiguration configuration;
 
             /// <summary>
             /// Initializes a new instance of the <see cref="CommandHandler"/> class.
             /// </summary>
             /// <param name="dbContext">The db context.</param>
-            public CommandHandler(ApplicationContext applicationContext, IMediator mediator, IConfiguration configuration)
+            public CommandHandler(ApplicationContext applicationContext, IMediator mediator)
             {
                 dbContext = applicationContext;
                 this.mediator = mediator;
-                this.configuration = configuration;
             }
 
             /// <inheritdoc/>
@@ -85,18 +96,6 @@ namespace ZipTest.Features.Accounts
             {
                 var query = new GetUser.Query() { EmailAddress = command.Request.EmailAddress };
                 User userDetails = await mediator.Send(query);
-
-                if (userDetails == null)
-                {
-                    throw new Exception("The specified email address is not found");
-                }
-
-
-                if (userDetails.MonthlySalary - userDetails.MonthlyExpenses <= double.Parse(configuration["creditLimit"]))
-                {
-                    throw new Exception("Credit limit criteria is not met.");
-                }
-
 
                 dbContext.Accounts.Add(new Db.Model.Accounts
                 {

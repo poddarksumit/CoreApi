@@ -64,7 +64,7 @@ namespace ZipTest.Features.Users
         [ProducesResponseType(typeof(Models.Response.CreateUserResponse), StatusCodes.Status200OK)]
         public async Task<IActionResult> CreateUserAsync([FromBody] UserRequest request)
         {
-            var command = new CreateAccount.Command() { User = request };
+            var command = new CreateUser.Command() { User = request };
             Models.Response.CreateUserResponse response = await mediator.Send(command);
             return Ok(response);
         }

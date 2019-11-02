@@ -4,6 +4,124 @@
     "C:\\development\\repo\\ZipTest\\tests\\ZipTest.Tests\\ZipTest.Tests.csproj": {}
   },
   "projects": {
+    "C:\\development\\repo\\ZipTest\\src\\ZipTest\\ZipTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\development\\repo\\ZipTest\\src\\ZipTest\\ZipTest.csproj",
+        "projectName": "ZipTest",
+        "projectPath": "C:\\development\\repo\\ZipTest\\src\\ZipTest\\ZipTest.csproj",
+        "packagesPath": "C:\\Users\\SumitPoddar\\.nuget\\packages\\",
+        "outputPath": "C:\\development\\repo\\ZipTest\\src\\ZipTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\SumitPoddar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.syncfusion.com/nuget_aspnetmvc/nuget/getsyncfusionpackages/aspnetmvc": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://brandlink.myget.org/F/brandlink-geolocation-response-nightlies/auth/de26c53e-0aeb-4725-b6ca-0a78d540157e/api/v3/index.json": {},
+          "https://brandlink.myget.org/F/packages/auth/3f6778f6-c9f0-47da-8b85-f0106386fdf1/api/v3/index.json": {},
+          "https://nuget.hangfire.io/nuget/hangfire-pro": {},
+          "https://nuget.syncfusion.com/nuget_aspnetmvc-js2/nuget/getsyncfusionpackages/aspnetmvc-js2": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[8.5.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "MicroElements.Swashbuckle.FluentValidation": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[7.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\development\\repo\\ZipTest\\tests\\ZipTest.Tests\\ZipTest.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -34,7 +152,11 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\development\\repo\\ZipTest\\src\\ZipTest\\ZipTest.csproj": {
+                "projectPath": "C:\\development\\repo\\ZipTest\\src\\ZipTest\\ZipTest.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -46,7 +168,19 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
@@ -54,9 +188,9 @@
               "target": "Package",
               "version": "[16.2.0, )"
             },
-            "coverlet.collector": {
+            "Moq": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[4.13.1, )"
             },
             "xunit": {
               "target": "Package",
@@ -78,6 +212,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

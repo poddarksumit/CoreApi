@@ -65,7 +65,7 @@ namespace ZipTest.Features.Users
             /// <inheritdoc/>
             public async Task<User> Handle(Query query, CancellationToken cancellationToken)
             {
-                DbModel.Users dbUser = await dbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => string.Equals(x.Email, query.EmailAddress, System.StringComparison.OrdinalIgnoreCase));
+                DbModel.Users dbUser = await dbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == query.EmailAddress);
 
                 return (dbUser == null)? null : mapper.Map<User>(dbUser);
             }

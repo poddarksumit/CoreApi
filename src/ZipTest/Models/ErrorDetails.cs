@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Net;
 
 namespace ZipTest.Models
 {
@@ -10,7 +11,7 @@ namespace ZipTest.Models
         /// <summary>
         /// Gets or Sets the status code of the error.
         /// </summary>
-        public int StatusCode { get; set; }
+        public HttpStatusCode StatusCode { get; set; }
 
         /// <summary>
         /// Gets or Sets the message of the error.

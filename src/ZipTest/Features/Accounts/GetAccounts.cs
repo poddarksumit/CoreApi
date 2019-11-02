@@ -73,7 +73,7 @@ namespace ZipTest.Features.Accounts
             /// <inheritdoc/>
             public async Task<AccountCollection> Handle(Query query, CancellationToken cancellationToken)
             {
-                IQueryable<Account> accounts = dbContext.Accounts.AsNoTracking().Include(x => x.User).Select(
+                IQueryable<Account> accounts = dbContext.Accounts.AsNoTracking().Include(x => x.User).OrderBy(x => x.AccountId).Select(
                         x => new Account()
                         {
                             AccountId = x.AccountId,

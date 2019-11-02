@@ -13,4 +13,3 @@ C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.Assembly
 C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.RazorTargetAssemblyInfo.cache
 C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.dll
 C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.pdb
-C:\development\repo\ZipTest\src\ZipTest\obj\Debug\netcoreapp2.2\ZipTest.csprojAssemblyReference.cache
